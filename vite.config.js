@@ -2,7 +2,6 @@ import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
-
 import vitePluginString from 'vite-plugin-string'
 
 export default defineConfig({

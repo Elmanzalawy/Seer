@@ -6,14 +6,16 @@ import '../sass/app.scss'
 import * as bootstrap from 'bootstrap'
 import Navbar from "./components/layout/Navbar.vue"
 import Foot from "./components/layout/Footer.vue"
+import GlobeComponent from "./components/GlobeComponent.vue"
 import ExampleComponent from "./components/ExampleComponent.vue"
 import router from "./router"
 
 
 createApp({
     components:{
+        GlobeComponent,
         ExampleComponent,
         Navbar,
         Foot
     }
-}).mount("#app")
+}).use(router).mount("#app")
