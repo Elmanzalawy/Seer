@@ -71,6 +71,23 @@ export default {
 
         camera.position.z = 15;
 
+        const starGeometry = new Three.BufferGeometry()
+        const starMaterial = new Three.PointsMaterial({
+            color: '#ffffff',
+        })
+
+        const starVertices = []
+        for(let i=0; i<10000; i++){
+            const x = (Math.random() - 0.5) * 2000; //rand value between -1000 and 1000
+            const y = (Math.random() - 0.5) * 2000; //rand value between -1000 and 1000
+            const z = - Math.random() * 3000
+            starVertices.push(x,y,z)
+        }
+
+        starGeometry.setAttribute('position', new Three.Float32BufferAttribute(starVertices, 3))
+        const stars = new Three.Points(starGeometry, starMaterial);
+        scene.add(stars)
+
         const mouse = {
             x: undefined,
             y: undefined
